@@ -17,13 +17,13 @@ app.get("/",(req,res)=>{
     });
 });
 
-app.get("/users", (req, res) => {
+app.get("/user", (req, res) => {
     res.status(200).send({
         data:users
     });
 });
 
-app.get("/books",(req,res)=>{
+app.get("/book",(req,res)=>{
     res.status(200).send({
         data:books
     })
