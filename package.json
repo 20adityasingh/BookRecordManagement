@@ -1,0 +1,24 @@
+{
+  "name": "bookrecordmanagement",
+  "version": "1.0.0",
+  "description": "serv",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/20adityasingh/BookRecordManagement.git"
+  },
+  "author": "AdityaSingh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/20adityasingh/BookRecordManagement/issues"
+  },
+  "homepage": "https://github.com/20adityasingh/BookRecordManagement#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
