@@ -2,9 +2,9 @@ const express = require("express");
 
 const app=express();
 
-const users = require("./DATA/user.json");
+const {users} = require("./DATA/user.json");
 
-const books = require("./DATA/books.json")
+const {books} = require("./DATA/books.json")
 
 const port = 8081;
 
