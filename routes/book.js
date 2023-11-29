@@ -53,7 +53,7 @@ router.get("/issued/by-user", (req, res) => {
       const Book = books.find((book) => book.id === user.issuedBook);
 
       if (Book) {
-        const issuedBook = { ...Book }; // Create a new object to avoid referencing the original book
+        const issuedBook = { ...Book }; // Create a new object to avoid referencing the original book(Spread operator)
 
         // Assign user-specific details to the book
         issuedBook.issuedBy = user.name;
@@ -69,10 +69,23 @@ router.get("/issued/by-user", (req, res) => {
     return res.status(404).send({ message: "No books issued yet." });
   }
 
-  return res.status(200).send({ success: true, data: issuedBooks });
+  return res.status(200).send({data: issuedBooks });
 });
 
-
+router.post("/add",(req,res)=>{
+  const {id,name,author,genre,price,publisher}=req.body;
+  const book=books.find((each)=> each.id===id);
+  if(book){
+    return res.status(404).send({
+      message:"Book already exist"
+    });
+  }
+  books.push({ id, name, author, genre, price, publisher });
+  res.status(200).send({
+    message:"Book added",
+    data:books
+  });
+});
 
 
 module.exports = router;
