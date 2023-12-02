@@ -1,10 +1,16 @@
 const express = require("express");
-
+const dotenv = require("dotenv");
 const app=express();
+const dbConnect = require("./mongoDB");
+
 
 const userRouter = require("./routes/user"); 
 
 const bookRouter = require("./routes/book");
+
+
+dotenv.config();
+dbConnect();
 
 const port = 8081;
 
